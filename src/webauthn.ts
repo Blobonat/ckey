@@ -66,9 +66,6 @@ export const generateAssertionResponse = async (
         return null;
     }
 
-    log.debug('origin', origin);
-    origin = 'http://localhost:9005';
-
     // For now we will only worry about the first entry
     const requestedCredential = publicKeyRequestOptions.allowCredentials[0];
     const credId: ArrayBuffer = requestedCredential.id as ArrayBuffer;

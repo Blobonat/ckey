@@ -66,6 +66,7 @@ const create = async (msg, sender: chrome.runtime.MessageSender) => {
 
 const sign = async (msg, sender: chrome.runtime.MessageSender) => {
     const opts = webauthnParse(msg.options);
+    const origin = getOriginFromUrl(sender.url);
     const pin = await requestPin(sender.tab.id, origin);
 
     try {
